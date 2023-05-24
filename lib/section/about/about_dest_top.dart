@@ -12,8 +12,8 @@ class AboutDesk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
-      constraints: BoxConstraints(maxWidth: 1110),
+      margin: const EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
+      constraints: const BoxConstraints(maxWidth: 1110),
       child: Column(
         children: [
           const Row(
@@ -23,19 +23,19 @@ class AboutDesk extends StatelessWidget {
               Expanded(
                 child: AboutSectionText(
                   text:
-                  "I am a graduate with engineering computer,I have been developing mobile Apps for over 3 years,I have worked in team for various startup and helped team in launching App and got valuable learning experience.",
+                      "I am a graduate with engineering computer,I have been developing mobile Apps for over 3 years,I have worked in team for various startup and helped team in launching App and got valuable learning experience.",
                 ),
               ),
               ExperienceCard(numOfExp: "03"),
               Expanded(
                 child: AboutSectionText(
                   text:
-                  "Currently working as Android developer and now work flutter developer.As a team member, believes that anyone should have efficient collaboration with other members which is one of the keys to success",
+                      "Currently working as Android developer and now work flutter developer.As a team member, believes that anyone should have efficient collaboration with other members which is one of the keys to success",
                 ),
               ),
             ],
           ),
-          SizedBox(height: kDefaultPadding * 3),
+          const SizedBox(height: kDefaultPadding * 3),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -44,7 +44,7 @@ class AboutDesk extends StatelessWidget {
                 text: "Hire Me!",
                 press: () {},
               ),
-              SizedBox(width: kDefaultPadding * 1.5),
+              const SizedBox(width: kDefaultPadding * 1.5),
               DefaultButton(
                 imageSrc: "assets/photo/download-resum.png",
                 text: "Download CV",

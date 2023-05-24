@@ -34,7 +34,7 @@ class _SocalCardState extends State<SocalCard> {
         },
         child: AnimatedContainer(
           duration: Duration(milliseconds: 200),
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             vertical: kDefaultPadding / 2,
             horizontal: kDefaultPadding * 1.5,
           ),

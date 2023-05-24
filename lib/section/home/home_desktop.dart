@@ -6,9 +6,11 @@ import 'package:protfolio/configs/app_dimensions.dart';
 import 'package:protfolio/configs/app_theme.dart';
 import 'package:protfolio/configs/app_typography.dart';
 import 'package:protfolio/configs/space.dart';
+import 'package:protfolio/provider/app_provider.dart';
 import 'package:protfolio/section/menu/menu.dart';
 import 'package:protfolio/utils/utils.dart';
 import 'package:protfolio/widgets/social_links.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -19,12 +21,22 @@ class HomeDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
+    final appProvider = Provider.of<AppProvider>(context);
     return Container(
       height: size.height * 1.025,
       padding: Space.h,
       child: Stack(
         children: [
+          Switch(
+            inactiveTrackColor: Colors.grey,
+            value: appProvider.isDark,
+            onChanged: (value) {
+              appProvider.setTheme(
+                !value ? ThemeMode.light : ThemeMode.dark,
+              );
+            },
+            activeColor: AppTheme.c!.primary!,
+          ),
           Positioned(
             bottom: 22,
             right: 22,

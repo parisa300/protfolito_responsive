@@ -1,5 +1,6 @@
 
 import 'package:protfolio/configs/app.dart';
+import 'package:protfolio/responsive/responsive.dart';
 import 'package:provider/provider.dart';
 
 import 'package:universal_html/html.dart' as html;
@@ -24,14 +25,14 @@ class _MainPageState extends State<MainPage> {
     App.init(context);
  //   final drawerProvider = Provider.of<DrawerProvider>(context);
 
-    return Scaffold(
+    return const Scaffold(
    //   key: drawerProvider.key,
       extendBodyBehindAppBar: true,
     //  drawer: !Responsive.isDesktop(context) ? const _MobileDrawer() : null,
       body: SafeArea(
         child: Stack(
           children: [
-            const _Body(),
+            _Body(),
         //    const ArrowOnTop(),
         //    Responsive.isTablet(context) || Responsive.isMobile(context)
        //         ? const _NavBarTablet()

@@ -5,25 +5,32 @@ import 'package:protfolio/configs/app_dimensions.dart';
 import 'package:protfolio/configs/app_theme.dart';
 import 'package:protfolio/configs/app_typography.dart';
 import 'package:protfolio/configs/space.dart';
+import 'package:protfolio/provider/app_provider.dart';
 import 'package:protfolio/section/menu/menu_tab.dart';
 import 'package:protfolio/utils/utils.dart';
 import 'package:protfolio/widgets/social_links.dart';
-
-
-
-
+import 'package:provider/provider.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-
+    final appProvider = Provider.of<AppProvider>(context);
     return SizedBox(
       height: MediaQuery.of(context).size.height * 1.02,
       child: Stack(
         children: [
+          Switch(
+            inactiveTrackColor: Colors.grey,
+            value: appProvider.isDark,
+            onChanged: (value) {
+              appProvider.setTheme(
+                !value ? ThemeMode.light : ThemeMode.dark,
+              );
+            },
+            activeColor: AppTheme.c!.primary!,
+          ),
           Positioned(
             bottom: 0,
             right: 0,

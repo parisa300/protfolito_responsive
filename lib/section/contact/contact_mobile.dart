@@ -1,34 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:protfolio/component/custom_text_filed.dart';
 import 'package:protfolio/component/default_button.dart';
 import 'package:protfolio/component/section_title.dart';
 import 'package:protfolio/configs/ui.dart';
-
+import 'package:protfolio/provider/app_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'components/socal_card.dart';
 
 class ContactMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return
-      Container(
+    return Container(
       // this height only for demo
       // height: 500,
-        margin: EdgeInsets.only(top: 16),
+      margin: EdgeInsets.only(top: 16),
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xFFE8F0F9),
         image: DecorationImage(
           fit: BoxFit.cover,
           image: AssetImage("assets/photo/recent_work_bg.png"),
         ),
       ),
-      child:
-      Column(
+      child: Column(
         children: [
-          SizedBox(height: kDefaultPadding * 2.5),
+          const SizedBox(height: kDefaultPadding * 2.5),
           Container(
             margin: EdgeInsets.only(left: 16),
-            child: SectionTitle(
+            child: const SectionTitle(
               title: "Contact Me",
               subTitle: "For Project inquiry and information",
               color: Color(0xFF07E24A),
@@ -37,7 +37,7 @@ class ContactMobile extends StatelessWidget {
           ContactBox()
         ],
       ),
-      );
+    );
   }
 }
 
@@ -48,13 +48,14 @@ class ContactBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appProvider = Provider.of<AppProvider>(context);
     return Container(
       constraints: BoxConstraints(maxWidth: 600),
       margin: EdgeInsets.only(top: kDefaultPadding * 2),
       padding: EdgeInsets.all(kDefaultPadding * 3),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
+        color: appProvider.isDark ? Colors.grey[900] : Colors.white,
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
         ),
@@ -67,27 +68,22 @@ class ContactBox extends StatelessWidget {
               SocalCard(
                 color: Color(0xFFD9FFFC),
                 iconSrc: "assets/photo/skype.png",
-                name: 'TheFlutterWay',
+                name: 'parisa',
                 press: () {},
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               SocalCard(
                 color: Color(0xFFE4FFC7),
                 iconSrc: "assets/photo/whatsapp.png",
-                name: 'TheFlutterWay',
+                name: 'parisa',
                 press: () {},
               ),
-              SizedBox(height: 8),
-              SocalCard(
-                color: Color(0xFFE8F0F9),
-                iconSrc: "assets/photo/messanger.png",
-                name: 'TheFlutterWay',
-                press: () {},
-              ),
+              const SizedBox(height: 8),
+
             ],
           ),
-          SizedBox(height: kDefaultPadding * 2),
-          ContactForm(),
+          const SizedBox(height: kDefaultPadding * 2),
+          const ContactForm(),
         ],
       ),
     );
@@ -101,6 +97,11 @@ class ContactForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController nameController = TextEditingController();
+    TextEditingController emailController = TextEditingController();
+    TextEditingController pTypeController = TextEditingController();
+    TextEditingController pBudgetController = TextEditingController();
+    TextEditingController descController = TextEditingController();
     return Form(
       child: Wrap(
         spacing: kDefaultPadding * 2.5,
@@ -108,62 +109,66 @@ class ContactForm extends StatelessWidget {
         children: [
           SizedBox(
             width: 470,
-            child: TextFormField(
+            child: CustomTextField(
               onChanged: (value) {},
-              decoration: InputDecoration(
-                labelText: "Your Name",
-                hintText: "Enter Your Name",
-              ),
+              label: 'Your Name',
+              controller: nameController,
             ),
           ),
           SizedBox(
             width: 470,
-            child: TextFormField(
+            child: CustomTextField(
               onChanged: (value) {},
-              decoration: InputDecoration(
-                labelText: "Email Address",
-                hintText: "Enter your email address",
-              ),
+              label: 'Email Address',
+              controller: emailController,
             ),
           ),
           SizedBox(
             width: 470,
-            child: TextFormField(
+            child: CustomTextField(
               onChanged: (value) {},
-              decoration: InputDecoration(
-                labelText: "Project Type",
-                hintText: "Select Project Type",
-              ),
+              label: 'Project Type',
+              controller: pTypeController,
             ),
           ),
           SizedBox(
-            width: 470,
-            child: TextFormField(
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                labelText: "Project Budget",
-                hintText: "Select Project Budget",
-              ),
-            ),
-          ),
+              width: 470,
+              child: CustomTextField(
+                onChanged: (value) {},
+                label: 'Project Budget',
+                controller: pBudgetController,
+              )),
           SizedBox(
-            // height: 300,
-            // TextField by default cover the height, i tryed to fix this problem but i cant
-            child: TextFormField(
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                labelText: "Description",
-                hintText: "Write some description",
-              ),
-            ),
-          ),
-          SizedBox(height: kDefaultPadding * 2),
+              // height: 300,
+              child: CustomTextField(
+            onChanged: (value) {},
+            label: 'Description',
+            controller: descController,
+          )),
+          const SizedBox(height: kDefaultPadding * 2),
           Center(
             child: FittedBox(
               child: DefaultButton(
                 imageSrc: "assets/photo/contact_icon.png",
                 text: "Contact Me!",
-                press: () {},
+                press: () {
+                  if (nameController.text.isNotEmpty &&
+                      emailController.text.isNotEmpty &&
+                      descController.text.isNotEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("Sending Message"),
+                    ));
+                    nameController.clear();
+                    emailController.clear();
+                    pTypeController.clear();
+                    pBudgetController.clear();
+                    descController.clear();
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("Field is Empety"),
+                    ));
+                  }
+                },
               ),
             ),
           )

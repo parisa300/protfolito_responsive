@@ -10,7 +10,7 @@ class ServiceMobile extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 16,bottom: 16),
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xFFE8F0F9),
         image: DecorationImage(
           fit: BoxFit.cover,
@@ -19,12 +19,6 @@ class ServiceMobile extends StatelessWidget {
       ),
       child: Column(
         children: [
-          // const CustomSectionHeading(
-          //   text: '\nWhat I can do?',
-          // ),
-          // const CustomSectionSubHeading(
-          //   text: 'I may not be perfect but surely I\'m of some use :)\n\n',
-          // ),
           Container(
             margin: const EdgeInsets.only(left: 16),
 

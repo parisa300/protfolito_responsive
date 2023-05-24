@@ -4,10 +4,10 @@ import 'app_core_theme.dart';
 
 class AppTheme {
   static final _core = AppCoreTheme(
-    shadowSub: const Color(0xffC0392B).withAlpha(100),
-    primary: const Color(0xffC0392B),
-    primaryLight: const Color(0xffC0392B).withAlpha(100),
-    textSub: const Color(0xff141414),
+    shadowSub: const Color(0xff6b28b3).withAlpha(100),
+    primary: const Color(0xff9456c4),
+    primaryLight: const Color(0xffa15fd4).withAlpha(100),
+    textSub: const Color(0xff2b2b2b),
     textSub2: const Color(0xff696969),
   );
 
@@ -22,8 +22,8 @@ class AppTheme {
 
   static AppCoreTheme dark = _core.copyWith(
     background: Colors.grey[900],
-    backgroundSub: const Color(0xff1c1c1e),
-    scaffold: const Color(0xff0e0e0e),
+    backgroundSub: const Color(0xff4e4e4e),
+    scaffold: const Color(0xff434343),
     text: Colors.white,
     textSub2: Colors.white.withOpacity(0.25),
   );

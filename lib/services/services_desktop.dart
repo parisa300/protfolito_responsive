@@ -22,7 +22,7 @@ class ServiceDesktopState extends State<ServiceDesktop> {
         // height: 500,
           margin: EdgeInsets.only(top: 8,bottom: 56),
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xFFE8F0F9),
             image: DecorationImage(
               fit: BoxFit.cover,
@@ -38,7 +38,7 @@ class ServiceDesktopState extends State<ServiceDesktop> {
           // const CustomSectionSubHeading(
           //   text: 'I may not be perfect but surely I\'m of some use :)\n\n',
           // ),
-          SectionTitle(
+          const SectionTitle(
             color: Color(0xFFFF0000),
             title: "Service Offerings",
             subTitle: "My Strong Arenas",

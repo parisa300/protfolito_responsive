@@ -59,7 +59,7 @@ class ExperienceCard extends StatelessWidget {
                 ),
                 Text(
                   numOfExp,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 100,
                     color: Colors.white,
@@ -68,7 +68,7 @@ class ExperienceCard extends StatelessWidget {
               ],
             ),
             SizedBox(height: kDefaultPadding / 2),
-            Text(
+            const Text(
               "Years of Experience",
               style: TextStyle(
                 color: Color(0xFFA600FF),
