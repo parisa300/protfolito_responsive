@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:protfolio/animations/transation_animation.dart';
 import 'package:protfolio/configs/app_dimensions.dart';
 import 'package:protfolio/configs/app_theme.dart';
 import 'package:protfolio/configs/app_typography.dart';
@@ -22,6 +23,8 @@ class HomeMobile extends StatelessWidget {
       height:  MediaQuery.of(context).size.height * 1.02,
       child: Stack(
         children: [
+
+          ScaleTransitionExample(),
           Switch(
             inactiveTrackColor: Colors.grey,
             value: appProvider.isDark,
@@ -43,6 +46,7 @@ class HomeMobile extends StatelessWidget {
               ),
             ),
           ),
+
           Positioned(
             bottom: 0,
             child: MenuMobile(),
@@ -111,6 +115,7 @@ class HomeMobile extends StatelessWidget {
                           speed: const Duration(milliseconds: 50),
                           textStyle: AppText.b1,
                         ),
+
                       ],
                       repeatForever: true,
                       isRepeatingAnimation: true,
@@ -119,6 +124,7 @@ class HomeMobile extends StatelessWidget {
                 ),
                 Space.y!,
                const SocialLinks(),
+
               ],
             ),
           ),

@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:protfolio/animations/entrance_fader.dart';
+import 'package:protfolio/animations/transation_animation.dart';
 import 'package:protfolio/configs/app_dimensions.dart';
 import 'package:protfolio/configs/app_theme.dart';
 import 'package:protfolio/configs/app_typography.dart';

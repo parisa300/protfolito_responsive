@@ -27,7 +27,7 @@ class SectionTitle extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 72),
             width: 8,
             height: 100,
-            color: Colors.black,
+            color: Colors.grey,
             child: DecoratedBox(
               decoration: BoxDecoration(
                 color: color,
@@ -48,7 +48,7 @@ class SectionTitle extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .labelMedium
-                    ?.copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+                    ?.copyWith(fontWeight: FontWeight.bold, color: Colors.grey[500]),
               )
             ],
           )

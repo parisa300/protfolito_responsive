@@ -5,6 +5,7 @@ import 'package:protfolio/section/about/about_section.dart';
 import 'package:protfolio/section/contact/contact_section.dart';
 import 'package:protfolio/section/home/home.dart';
 import 'package:protfolio/services/services.dart';
+import 'package:protfolio/widgets/footer.dart';
 
 
 
@@ -63,7 +64,7 @@ class BodyUtils {
     AboutSection(),
      const Services(),
     const RecentWork(),
-    ContactScetion(),
-    // Footer(),
+    const ContactScetion(),
+    const Footer(),
   ];
 }
