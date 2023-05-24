@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/component/custom_text_heading.dart';
 import 'package:protfolio/component/project_card.dart';
 import 'package:protfolio/component/section_title.dart';
 import 'package:protfolio/configs/app_dimensions.dart';
@@ -24,12 +23,6 @@ class _RecentWorkDesktopState extends State<RecentWorkDesktop> {
       padding: Space.h!,
       child: Column(
         children: [
-          // const CustomSectionHeading(
-          //   text: "\nPortfolio",
-          // ),
-          // const CustomSectionSubHeading(
-          //   text: "Here are few samples of my previous work :)\n\n",
-          // ),
           const SectionTitle(
             title: "Recent Woorks",
             subTitle: "My Strong Arenas",

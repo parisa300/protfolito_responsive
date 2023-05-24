@@ -7,7 +7,7 @@ import '../../../constants.dart';
 
 class AboutTextWithSign extends StatelessWidget {
   const AboutTextWithSign({
-     Key? key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -17,16 +17,17 @@ class AboutTextWithSign extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 54,vertical: 16),
+          margin: const EdgeInsets.symmetric(horizontal: 54, vertical: 16),
           child: Text(
             "About \nmy story",
-            style: Theme.of(context)
-                .textTheme
-                .labelLarge
-                ?.copyWith(fontWeight: FontWeight.bold, color: appProvider.isDark ? Colors.white: Colors.grey[900],fontSize: 40,),
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: appProvider.isDark ? Colors.white : Colors.grey[900],
+                  fontSize: 40,
+                ),
           ),
         ),
-        SizedBox(height: 12 ),
+        const SizedBox(height: 12),
         Image.asset("assets/photo/sign.png")
       ],
     );

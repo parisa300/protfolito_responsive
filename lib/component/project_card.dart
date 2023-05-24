@@ -5,8 +5,6 @@ import 'package:protfolio/configs/app_typography.dart';
 import 'package:protfolio/configs/space.dart';
 import 'package:protfolio/constants.dart';
 import 'package:protfolio/provider/app_provider.dart';
-
-
 import 'package:provider/provider.dart';
 
 class ProjectCard extends StatefulWidget {
@@ -26,6 +24,7 @@ class ProjectCard extends StatefulWidget {
     required this.projectTitle,
     required this.projectDescription,
   }) : super(key: key);
+
   @override
   ProjectCardState createState() => ProjectCardState();
 }

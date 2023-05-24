@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/configs/ui.dart';
 
-import '../../../constants.dart';
-
 class ExperienceCard extends StatelessWidget {
   const ExperienceCard({
-     Key? key,
+    Key? key,
     required this.numOfExp,
   }) : super(key: key);
 
@@ -14,23 +12,23 @@ class ExperienceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      padding: EdgeInsets.all(kDefaultPadding),
+      margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+      padding: const EdgeInsets.all(kDefaultPadding),
       height: 240,
       width: 255,
       decoration: BoxDecoration(
-        color: Color(0xFFF7E8FF),
+        color: const Color(0xFFF7E8FF),
         borderRadius: BorderRadius.circular(10),
       ),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: Color(0xFFEDD2FC),
+          color: const Color(0xFFEDD2FC),
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
               blurRadius: 6,
-              color: Color(0xFFA600FF).withOpacity(0.25),
+              color: const Color(0xFFA600FF).withOpacity(0.25),
             ),
           ],
         ),
@@ -47,12 +45,12 @@ class ExperienceCard extends StatelessWidget {
                     foreground: Paint()
                       ..style = PaintingStyle.stroke
                       ..strokeWidth = 6
-                      ..color = Color(0xFFDFA3FF).withOpacity(0.5),
+                      ..color = const Color(0xFFDFA3FF).withOpacity(0.5),
                     shadows: [
                       BoxShadow(
-                        offset: Offset(0, 5),
+                        offset: const Offset(0, 5),
                         blurRadius: 10,
-                        color: Color(0xFFA600FF).withOpacity(0.5),
+                        color: const Color(0xFFA600FF).withOpacity(0.5),
                       ),
                     ],
                   ),
@@ -67,7 +65,7 @@ class ExperienceCard extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: kDefaultPadding / 2),
+            const SizedBox(height: kDefaultPadding / 2),
             const Text(
               "Years of Experience",
               style: TextStyle(

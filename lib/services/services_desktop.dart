@@ -18,17 +18,17 @@ class ServiceDesktopState extends State<ServiceDesktop> {
     return Container(
       padding: Space.hf(4),
 
-        // this height only for demo
-        // height: 500,
-          margin: EdgeInsets.only(top: 8,bottom: 56),
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            color: Color(0xFFE8F0F9),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage("assets/photo/bg_img_2.png"),
-            ),
-          ),
+      // this height only for demo
+      // height: 500,
+      margin: const EdgeInsets.only(top: 8, bottom: 56),
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        color: Color(0xFFE8F0F9),
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage("assets/photo/bg_img_2.png"),
+        ),
+      ),
 
       child: Column(
         children: [
@@ -56,8 +56,7 @@ class ServiceDesktopState extends State<ServiceDesktop> {
                   (e) => _ServiceCard(
                     serviceIcon: StaticUtils.servicesIcons[e.key],
                     serviceTitle: StaticUtils.servicesTitles[e.key],
-                    serviceDescription:
-                    StaticUtils.servicesDescription[e.key],
+                    serviceDescription: StaticUtils.servicesDescription[e.key],
                   ),
                 )
                 .toList(),

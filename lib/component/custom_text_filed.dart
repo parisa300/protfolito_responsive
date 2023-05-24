@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:protfolio/configs/app_typography.dart';
 import 'package:protfolio/configs/format_field.dart';
 
-
-
-
-
 class CustomTextField extends StatefulWidget {
   final String label;
   final String? hint;
@@ -23,7 +19,6 @@ class CustomTextField extends StatefulWidget {
   final int? maxLength;
   final bool isVisibleStar;
 
-
   const CustomTextField({
     Key? key,
     required this.label,
@@ -37,7 +32,6 @@ class CustomTextField extends StatefulWidget {
     this.autoFocus = false,
     this.isVisibleStar = false,
     this.enabled,
-
     this.contentPadding,
     required this.controller,
     this.maxLength,
@@ -54,7 +48,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   void initState() {
     super.initState();
-    _showClearButton =_isShowClearButton();
+    _showClearButton = _isShowClearButton();
   }
 
   @override
@@ -85,26 +79,25 @@ class _CustomTextFieldState extends State<CustomTextField> {
         hintStyle: const TextStyle(color: Colors.grey),
         contentPadding: widget.contentPadding,
         // border: InputBorder.none,
-        border:  const OutlineInputBorder(
-            borderSide:  BorderSide(color: Colors.grey)
-        ),
+        border: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey)),
         focusedBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(5.0)),
             borderSide: BorderSide(color: Colors.grey)),
         suffixIcon: widget.suffixIcon ??
             (_showClearButton
                 ? IconButton(
-              onPressed: () {
-                widget.controller.text = " ";
-                setState(() {
-                  _showClearButton = false;
-                });
-              },
-              icon: const Icon(
-                Icons.close,
-                color: Colors.grey,
-              ),
-            )
+                    onPressed: () {
+                      widget.controller.text = " ";
+                      setState(() {
+                        _showClearButton = false;
+                      });
+                    },
+                    icon: const Icon(
+                      Icons.close,
+                      color: Colors.grey,
+                    ),
+                  )
                 : null),
         label: Text(widget.isVisibleStar ? "${widget.label} " : widget.label),
       ),

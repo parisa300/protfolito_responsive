@@ -12,7 +12,6 @@ import 'package:protfolio/utils/utils.dart';
 import 'package:protfolio/widgets/social_links.dart';
 import 'package:provider/provider.dart';
 
-
 class HomeMobile extends StatelessWidget {
   const HomeMobile({Key? key}) : super(key: key);
 
@@ -20,11 +19,10 @@ class HomeMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     final appProvider = Provider.of<AppProvider>(context);
     return SizedBox(
-      height:  MediaQuery.of(context).size.height * 1.02,
+      height: MediaQuery.of(context).size.height * 1.02,
       child: Stack(
         children: [
-
-          ScaleTransitionExample(),
+          const ScaleTransitionExample(),
           Switch(
             inactiveTrackColor: Colors.grey,
             value: appProvider.isDark,
@@ -46,8 +44,7 @@ class HomeMobile extends StatelessWidget {
               ),
             ),
           ),
-
-          Positioned(
+          const Positioned(
             bottom: 0,
             child: MenuMobile(),
           ),
@@ -115,7 +112,6 @@ class HomeMobile extends StatelessWidget {
                           speed: const Duration(milliseconds: 50),
                           textStyle: AppText.b1,
                         ),
-
                       ],
                       repeatForever: true,
                       isRepeatingAnimation: true,
@@ -123,8 +119,7 @@ class HomeMobile extends StatelessWidget {
                   ],
                 ),
                 Space.y!,
-               const SocialLinks(),
-
+                const SocialLinks(),
               ],
             ),
           ),

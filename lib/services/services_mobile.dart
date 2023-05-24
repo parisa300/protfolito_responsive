@@ -8,7 +8,7 @@ class ServiceMobile extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.only(top: 16,bottom: 16),
+      margin: const EdgeInsets.only(top: 16,bottom: 16),
       width: double.infinity,
       decoration: const BoxDecoration(
         color: Color(0xFFE8F0F9),

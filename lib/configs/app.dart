@@ -7,7 +7,6 @@ import 'app_dimensions.dart';
 import 'app_theme.dart';
 import 'app_typography.dart';
 
-
 class App {
   static bool? isLtr;
   static bool showAds = false;

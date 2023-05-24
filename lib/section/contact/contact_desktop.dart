@@ -14,7 +14,7 @@ class ContactDeskTop extends StatelessWidget {
     return Container(
       // this height only for demo
       // height: 500,
-      margin: EdgeInsets.only(top: 16),
+      margin: const EdgeInsets.only(top: 16),
       width: double.infinity,
       decoration: const BoxDecoration(
         color: Color(0xFFE8F0F9),
@@ -47,9 +47,9 @@ class ContactBox extends StatelessWidget {
   Widget build(BuildContext context) {
     final appProvider = Provider.of<AppProvider>(context);
     return Container(
-      constraints: BoxConstraints(maxWidth: 1110),
-      margin: EdgeInsets.only(top: kDefaultPadding * 2),
-      padding: EdgeInsets.all(kDefaultPadding * 3),
+      constraints: const BoxConstraints(maxWidth: 1110),
+      margin: const EdgeInsets.only(top: kDefaultPadding * 2),
+      padding: const EdgeInsets.all(kDefaultPadding * 3),
       decoration: BoxDecoration(
         color: appProvider.isDark ? Colors.grey[900] : Colors.white,
         borderRadius: const BorderRadius.only(
@@ -63,14 +63,14 @@ class ContactBox extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SocalCard(
-                color: Color(0xFFD9FFFC),
+                color: const Color(0xFFD9FFFC),
                 iconSrc: "assets/photo/skype.png",
                 name: 'parisa',
                 press: () {},
               ),
               const SizedBox(width: 16),
               SocalCard(
-                color: Color(0xFFE4FFC7),
+                color: const Color(0xFFE4FFC7),
                 iconSrc: "assets/photo/whatsapp.png",
                 name: 'parisa',
                 press: () {},

@@ -1,8 +1,4 @@
-
-
 import 'package:flutter/material.dart';
-
-
 
 class ScaleTransitionExample extends StatefulWidget {
   const ScaleTransitionExample({super.key});
@@ -36,15 +32,24 @@ class _ScaleTransitionExampleState extends State<ScaleTransitionExample>
       body: Center(
         child: ScaleTransition(
           scale: _animation,
-          child:  Padding(
-            padding: EdgeInsets.all(8.0),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Row(
-            children: [
-              FlutterLogo(size: 56,),
-              Image.asset('assets/photo/java-logo.png',width: 56,height: 56,),
-              Image.asset('assets/photo/kotlin-icon.png',width: 38,height: 38,),
-
-            ],
+              children: [
+                const FlutterLogo(
+                  size: 56,
+                ),
+                Image.asset(
+                  'assets/photo/java-logo.png',
+                  width: 56,
+                  height: 56,
+                ),
+                Image.asset(
+                  'assets/photo/kotlin-icon.png',
+                  width: 38,
+                  height: 38,
+                ),
+              ],
             ),
           ),
         ),
